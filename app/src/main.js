@@ -58,7 +58,7 @@ const encryptText = () => {
       source_text.innerText = window.electron.readFile(fileName);
       result_text.innerText = "";
     });
-    window.document.querySelector("#top-side").appendChild(div);
+    window.document.querySelector("#file_list").appendChild(div);
   };
 
   const getFileList = () => {

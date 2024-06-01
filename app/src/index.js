@@ -18,7 +18,6 @@ const createWindow = () => {
   });
   mainWindow.setMenuBarVisibility(false);
   mainWindow.setTitle('Групова динаміка та комунікації');
-  mainWindow.webContents.openDevTools();
 
   // and load the index.html of the app.
   mainWindow.loadFile(path.join(__dirname, 'index.html'));
@@ -26,11 +25,14 @@ const createWindow = () => {
   // Open the DevTools.
   // mainWindow.webContents.openDevTools();
 };
+app.getAppPath('home')
+// app.setPath('documents');
 
 // This method will be called when Electron has finished
 // initialization and is ready to create browser windows.
 // Some APIs can only be used after this event occurs.
 app.whenReady().then(() => {
+  // console.log(app.getPath());
   createWindow();
 
   // On OS X it's common to re-create a window in the app when the
