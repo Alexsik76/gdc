@@ -49,6 +49,5 @@ with ui.card():
             with ui.element('h2').classes('text-lg'):
                 ui.label('Результат:')
                
-                ui.label('').bind_text_from(data, 'dest_text')
-        
+                ui.label('').bind_text_from(data, 'dest_text')     
 ui.run()
