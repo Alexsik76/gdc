@@ -15,8 +15,6 @@ def handle_upload(e: events.UploadEventArguments):
     ui.notify(f'Uploaded {e.name}')
 
 def handle_save(e: events.UploadEventArguments):
-    print(data['dest_filename'], data['dest_text'])
-    
     with open(data['dest_filename'], 'w', encoding='utf-8') as output_file:
         output_file.write(data['dest_text'])
 
@@ -34,7 +32,7 @@ def handle_decrypt():
 
 with ui.card():
     with ui.row():
-        ui.upload(label="Завантажити файл", on_upload=handle_upload)
+        ui.upload(label="Завантажити файл", on_upload=handle_upload, auto_upload=True)
         with ui.column():
             ui.button('Encrypt', on_click=handle_encrypt)
             ui.button('Decrypt', on_click=handle_decrypt)
