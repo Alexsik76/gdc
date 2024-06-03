@@ -17,6 +17,7 @@ def handle_upload(e: events.UploadEventArguments):
 def handle_save(e: events.UploadEventArguments):
     with open(data['dest_filename'], 'w', encoding='utf-8') as output_file:
         output_file.write(data['dest_text'])
+    ui.notify('File saved')
 
 def handle_encrypt():
     new_text = caesar_cipher(data['source_text'], 3)
